@@ -51,4 +51,8 @@
 | ------- |
 | [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
 | [0706-design-hashmap](https://github.com/chitrarathore139/LeetCode/tree/master/0706-design-hashmap) |
+## Database
+|  |
+| ------- |
+| [1581-customer-who-visited-but-did-not-make-any-transactions](https://github.com/chitrarathore139/LeetCode/tree/master/1581-customer-who-visited-but-did-not-make-any-transactions) |
 <!---LeetCode Topics End-->
