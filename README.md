@@ -26,4 +26,24 @@
 |  |
 | ------- |
 | [0509-fibonacci-number](https://github.com/chitrarathore139/LeetCode/tree/master/0509-fibonacci-number) |
+## Array
+|  |
+| ------- |
+| [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
+## Hash Table
+|  |
+| ------- |
+| [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
+## Linked List
+|  |
+| ------- |
+| [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
+## Design
+|  |
+| ------- |
+| [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
+## Hash Function
+|  |
+| ------- |
+| [0705-design-hashset](https://github.com/chitrarathore139/LeetCode/tree/master/0705-design-hashset) |
 <!---LeetCode Topics End-->
