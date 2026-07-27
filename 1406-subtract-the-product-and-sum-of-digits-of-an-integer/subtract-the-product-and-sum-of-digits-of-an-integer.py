@@ -1,5 +1,9 @@
-class Solution:
-    def subtractProductAndSum(self, n: int) -> int:
+class Solution(object):
+    def subtractProductAndSum(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
         sum = 0
         product = 1
 
