@@ -1,3 +1,4 @@
+/* Write your T-SQL query statement below */
 SELECT d.name AS Department,
        e.name AS Employee,
        e.salary AS Salary
