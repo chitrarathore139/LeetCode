@@ -1,21 +1,17 @@
 class Solution {
   public int[] twoSum(int[] nums, int target) {
-    int low = 0;
-    int high = nums.length - 1;
+    Map<Integer, Integer> m = new HashMap<>();
 
-    while (low < nums.length) {
-      if (nums[low] + nums[high] == target) {
-        return new int[]{low, high};
+    for (int i = 0; i < nums.length; i++) {
+      int compliment = target - nums[i];
+
+      if (m.containsKey(compliment)) {
+        return new int[]{m.get(compliment), i};
       }
 
-      high--;
-
-      if (high == low) {
-        low++;
-        high = nums.length - 1;
-      }
+      m.put(nums[i], i);
     }
 
-    return new int[]{};
+    return new int[]{-1, -1};
   }
 }
