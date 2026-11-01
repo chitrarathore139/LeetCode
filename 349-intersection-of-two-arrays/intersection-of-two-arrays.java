@@ -13,7 +13,7 @@ class Solution {
         for (int num : nums2) {
             if (set.contains(num)) {
                 result[idx++] = num;
-                set.remove(num);   // dobara add na ho
+                set.remove(num);
             }
         }
 
