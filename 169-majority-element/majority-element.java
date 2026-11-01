@@ -1,25 +1,17 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
 class Solution {
     public int majorityElement(int[] nums) {
-        int n=nums.length;
-        int threshold= n/2;
-        int ans=0;
-        HashMap<Integer,Integer> map= new HashMap<>();
-        for(int i : nums){
-            if(map.containsKey(i)){
-                map.put(i,map.get(i)+1);
-            }else{
-                map.put(i,1);
+        HashMap<Integer, Integer> hash = new HashMap<>();
+        int res = 0;
+        int majority = 0;
+
+        for (int n : nums) {
+            hash.put(n, 1 + hash.getOrDefault(n, 0));
+            if (hash.get(n) > majority) {
+                res = n;
+                majority = hash.get(n);
             }
         }
-        for(Map.Entry<Integer,Integer> e: map.entrySet()){
-            if(e.getValue() > threshold){
-                ans= e.getKey();
-            }
-        }
-        return ans;
+
+        return res;        
     }
 }
