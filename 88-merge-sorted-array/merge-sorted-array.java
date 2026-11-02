@@ -1,16 +1,16 @@
+import java.util.*;
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (m == 0 && n == 1) {
-            nums1[0] = nums2[0];
-            return;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            list.add(nums1[i]);
         }
-        if (m == 1 && n == 0) {
-            return;
-        }
-        int index = m;
         for (int i = 0; i < n; i++) {
-            nums1[index] = nums2[i];
-            index++;
-        }Arrays.sort(nums1);
+            list.add(nums2[i]);
+        }
+        Collections.sort(list);
+        for (int i = 0; i < list.size(); i++) {
+            nums1[i] = list.get(i);
+        }
     }
 }
