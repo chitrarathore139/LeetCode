@@ -1,53 +1,25 @@
-
 class Solution {
-  public static void mergeSort(int[] nums, int low, int high) {
-    if(low < high) {
-      int mid = low + (high - low) / 2;
+    public int[] sortArray(int[] arr) {
+        int max = arr[0] ;
+        int min = arr[0] ;
+        for(int num : arr){
+            max = Math.max(num , max);
+            min = Math.min(num , min) ;
+        }
+        int freq[] = new int[max-min+1] ;
+        for(int numm : arr){
+            int in = numm - min ;
+            freq[in] ++ ;
+        }
 
-      mergeSort(nums, low, mid);
-      mergeSort(nums, mid + 1, high);
-
-      merge(nums, low, mid, high);
+        int index = 0 ;
+        for(int i=0 ; i<freq.length ; i++){
+            while(freq[i] > 0){
+                arr[index] = i+ min  ;
+                index ++ ;
+                freq[i]-- ;
+            }
+        }
+        return arr ;
     }
-  }
-
-  public static void merge(int[] nums, int low, int mid, int high) {
-    int[] temp = new int[high - low + 1];
-
-    int i = low;
-    int j = mid + 1;
-    int k = 0;
-
-    while(i <= mid && j <= high) {
-      if(nums[i] <= nums[j]) {
-        temp[k] = nums[i];
-        i++;
-      } else {
-        temp[k] = nums[j];
-        j++;
-      }
-      k++;
-    }
-
-    while(i <= mid) {
-      temp[k] = nums[i];
-      i++;
-      k++;
-    }
-
-    while(j <= high) {
-      temp[k] = nums[j];
-      j++;
-      k++;
-    }
-
-    for(int x = 0; x < temp.length; x++) {
-      nums[low + x] = temp[x];
-    }
-  }
-
-  public int[] sortArray(int[] nums) {
-    mergeSort(nums, 0, nums.length - 1);
-    return nums;
-  }
 }
