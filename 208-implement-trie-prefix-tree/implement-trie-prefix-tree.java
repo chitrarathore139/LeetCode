@@ -1,14 +1,16 @@
-class Trie {
-    static class Node{
-        Node[] children;
-        boolean eow;
-        Node(){
-            children = new Node[26];
-            eow= false;
-        }
+class Node{
+    Node[] children;
+    boolean eow;
+    public Node(){
+        children = new Node[26];
+        eow= false;
     }
-
-    Node root= new Node();
+}
+class Trie {
+    Node root;
+    public Trie() {
+        root= new Node();
+    }
     
     public void insert(String word) {
         Node curr=root;
