@@ -11,7 +11,6 @@ class Trie {
     public Trie() {
         root= new Node();
     }
-    
     public void insert(String word) {
         Node curr=root;
         for(int i=0;i<word.length();i++){
@@ -27,7 +26,6 @@ class Trie {
             curr=node;
         }
     }
-    
     public boolean search(String word) {
         Node curr=root;
         for(int i=0;i<word.length();i++){
@@ -39,7 +37,6 @@ class Trie {
         }
         return true;
     }
-    
     public boolean startsWith(String prefix) {
         Node curr=root;
         int i=0;
