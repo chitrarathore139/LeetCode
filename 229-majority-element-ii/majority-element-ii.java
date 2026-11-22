@@ -1,11 +1,6 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
-        int n=nums.length;
-        int threshold= n/3;
         List<Integer> ans= new ArrayList<>();
         HashMap<Integer,Integer> map= new HashMap<>();
         for(int i : nums){
@@ -16,7 +11,7 @@ class Solution {
             }
         }
         for(Map.Entry<Integer,Integer> e: map.entrySet()){
-            if(e.getValue() > threshold){
+            if(e.getValue() > nums.length/3){
                 ans.add(e.getKey());
             }
         }
