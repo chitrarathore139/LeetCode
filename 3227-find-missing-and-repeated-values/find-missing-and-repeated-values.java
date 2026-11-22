@@ -1,36 +1,24 @@
-
 class Solution {
-  public int[] findMissingAndRepeatedValues(int[][] grid) {
-    ArrayList<Integer> list = new ArrayList<>();
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+        int n = grid.length;
+        int hash[] = new int[n*n + 1];
+        int ans[] = new int[2];
 
-    for (int i = 0; i < grid.length; i++) {
-      for (int j = 0; j < grid[0].length; j++) {
-        list.add(grid[i][j]);
-      }
+        for(int i = 0 ; i<grid.length ; i++){
+            for(int j = 0 ; j<grid.length ; j++){
+                int ind = grid[i][j];
+                hash[ind]++;
+            }
+        }
+
+        for(int i = 1 ; i<hash.length ; i++){
+            if(hash[i] == 0)
+                ans[1] = i;
+            else if(hash[i] == 2)
+                ans[0] = i;
+        }
+
+        return ans;
+
     }
-
-    Collections.sort(list);
-
-    int missing = 0;
-    int twice = 0;
-
-    for (int i = 0; i < list.size() - 1; i++) {
-      if (list.get(i).equals(list.get(i + 1))) {
-        twice = list.get(i);
-      }
-      else if (list.get(i + 1) != list.get(i) + 1) {
-        missing = list.get(i) + 1;
-      }
-    }
-
-    if (list.get(0) != 1) {
-      missing = 1;
-    }
-
-    if (list.get(list.size() - 1) != list.size()) {
-      missing = list.size();
-    }
-
-    return new int[]{twice, missing};
-  }
 }
